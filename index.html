@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termotubos - Soluções B2B</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-escuro: #00397C;
+            --verde-claro: #8CDC3B;
+            --amarelo: #FFC107;
+            --fundo-claro: #F9F9F9;
+            --fundo-base: #F4F7F9;
+            --texto-escuro: #1A1A1A;
+            --branco: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--fundo-base);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background-color: #001f45;
+            color: var(--branco);
+            text-align: center;
+            padding: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 150px;
+            min-height: 80vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero-content h3 {
+            font-size: 1rem;
+            color: var(--amarelo);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: #E0E0E0;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: var(--verde-claro);
+            color: #00224A;
+            padding: 18px 45px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            box-shadow: 0 10px 25px rgba(140, 220, 59, 0.3);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            background-color: #7BCA30;
+            box-shadow: 0 15px 30px rgba(140, 220, 59, 0.5);
+        }
+
+        .hero-image-wrapper {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 450px;
+            height: 550px;
+            background: url('https://via.placeholder.com/450x550/1a1a1a/ffffff?text=FOTO+PRODUTO/PESSOA') no-repeat center center;
+            background-size: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* SEÇÃO DE KITS */
+        .kits-section {
+            padding: 80px 5%;
+            background-color: var(--fundo-base);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--azul-escuro);
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grid-kits {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card-kit {
+            background-color: var(--branco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-kit:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 57, 124, 0.1);
+        }
+
+        .card-img-box {
+            position: relative;
+            height: 180px;
+            width: 100%;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: #E0E0E0;
+        }
+
+        .tag {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background-color: var(--amarelo);
+            color: var(--azul-escuro);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .tag-desc {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #777;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .btn-kit {
+            display: block;
+            width: 100%;
+            margin-top: auto;
+            padding: 10px;
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            border: none;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-kit:hover {
+            background-color: var(--verde-claro);
+            color: #00224A;
+        }
+
+        .card-body {
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-body h3 {
+            color: var(--azul-escuro);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .feature-list li::before {
+            content: '✔';
+            color: var(--verde-claro);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* SEÇÃO 03 — SOLUÇÕES TERMOTUBOS */
+        .solucoes-section {
+            padding: 90px 5%;
+            background-color: var(--branco);
+        }
+
+        .grid-solucoes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .card-solucao {
+            background-color: var(--fundo-claro);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--azul-escuro);
+        }
+
+        .card-solucao h3 {
+            color: var(--azul-escuro);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .card-solucao p {
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .cta-center {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* SEÇÃO 04 — POR QUE EMPRESAS ESCOLHEM */
+        .porque-section {
+            padding: 90px 5%;
+            background-color: var(--fundo-base);
+        }
+
+        .logos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 40px auto;
+            opacity: 0.6;
+        }
+
+        .logo-placeholder {
+            width: 140px;
+            height: 65px;
+            background: #e0e6ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #777;
+            border-radius: 5px;
+        }
+
+        .logo-img {
+            max-width: 140px;
+            max-height: 65px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: 0.3s;
+        }
+
+        .logo-img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            max-width: 1260px;
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-depoimentos {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding: 15px 0;
+            width: 100%;
+            max-width: 1150px;
+        }
+
+        .grid-depoimentos::-webkit-scrollbar {
+            display: none;
+        }
+
+        .card-depoimento {
+            background-color: var(--branco);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: 0.3s;
+            flex: 0 0 calc(50% - 10px);
+            max-width: calc(50% - 10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .card-depoimento {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        .carousel-btn {
+            background-color: var(--verde-claro);
+            color: #00224A;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+            z-index: 10;
+            margin: 0 10px;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn:hover {
+            background-color: #7BCA30;
+            transform: scale(1.1);
+        }
+
+        .card-depoimento:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 57, 124, 0.1);
+        }
+
+        .card-depoimento img {
+            max-width: 100%;
+            max-height: 220px;
+            width: auto;
+            height: auto;
+            display: block;
+        }
+
+        /* MODAL FORM */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: var(--branco);
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .modal-content h3 {
+            color: var(--azul-escuro);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--fundo-claro);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--verde-claro);
+            color: #00224A;
+            padding: 16px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 800;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn-submit:hover {
+            background-color: #7BCA30;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 5%;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image-wrapper {
+                justify-content: center;
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .hero-image {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">A maior do segmento | Soluções completas com produtos a pronta entrega e atendimento
+        especializado.</div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h3>Termotubos</h3>
+            <h1>Proteção elétrica, organização técnica e acabamento profissional para aplicações de alta exigência.</h1>
+            <p>Chicotes organizados, conexões protegidas e padrão replicável em cada aplicação.
+            </p>
+            <button onclick="openModal()" class="btn-main">Montar meu Kit Agora</button>
+        </div>
+        <div class="hero-image-wrapper">
+            <div class="hero-image"></div>
+        </div>
+    </header>
+
+    <section class="kits-section">
+        <h2 class="section-title">O que você vai encontrar nos nossos Kits?</h2>
+        <p class="section-subtitle">Kits desenvolvidos sob medida para atender as demandas técnicas da sua equipe.</p>
+        <div class="grid-kits">
+            <div class="card-kit">
+                <div class="card-img-box">
+                    <div class="card-img"
+                        style="background: var(--branco) url('kit-painel-v4.png') center/contain no-repeat;">
+                    </div><span class="tag">KIT 01</span>
+                </div>
+                <div class="card-body">
+                    <span class="tag-desc">Cabos organizados, painéis padronizados e menor risco operacional para quem
+                        vive de quadro elétrico.</span>
+                    <h3>Painel Elétrico</h3>
+                    <ul class="feature-list">
+                        <li>Termo retrátil</li>
+                        <li>Abraçadeiras em nylon</li>
+                        <li>Soprador Térmico</li>
+                        <li>Malha de proteção</li>
+                    </ul>
+                    <button onclick="openModal()" class="btn-kit">Montar meu Kit</button>
+                </div>
+            </div>
+            <div class="card-kit">
+                <div class="card-img-box">
+                    <div class="card-img"
+                        style="background: url('https://via.placeholder.com/400x250/00397C/ffffff?text=Automacao') center/cover;">
+                    </div><span class="tag">KIT 02</span>
+                </div>
+                <div class="card-body">
+                    <span class="tag-desc">Proteção, organização e acabamento técnico para aplicações que exigem padrão
+                        e confiabilidade.</span>
+                    <h3>Automação</h3>
+                    <ul class="feature-list">
+                        <li>Proteção técnica</li>
+                        <li>Organização de chicotes</li>
+                        <li>Acabamento profissional</li>
+                    </ul>
+                    <button onclick="openModal()" class="btn-kit">Montar meu Kit</button>
+                </div>
+            </div>
+            <div class="card-kit">
+                <div class="card-img-box">
+                    <div class="card-img"
+                        style="background: url('https://via.placeholder.com/400x250/00397C/ffffff?text=Eventos') center/cover;">
+                    </div><span class="tag">KIT 03</span>
+                </div>
+                <div class="card-body">
+                    <span class="tag-desc">O único kit desenvolvido para resistir a condições extremas.</span>
+                    <h3>Sonorização e Eventos</h3>
+                    <ul class="feature-list">
+                        <li>Malha náutica</li>
+                        <li>Abraçadeiras UV</li>
+                        <li>Termo retrátil premium</li>
+                    </ul>
+                    <button onclick="openModal()" class="btn-kit">Montar meu Kit</button>
+                </div>
+            </div>
+            <div class="card-kit">
+                <div class="card-img-box">
+                    <div class="card-img"
+                        style="background: url('https://via.placeholder.com/400x250/00397C/ffffff?text=Manutencao') center/cover;">
+                    </div><span class="tag">KIT 04</span>
+                </div>
+                <div class="card-body">
+                    <span class="tag-desc">Rapidez na execução, acabamento profissional e menos retrabalho.</span>
+                    <h3>Manutenção</h3>
+                    <ul class="feature-list">
+                        <li>Soprador térmico</li>
+                        <li>Termo retrátil</li>
+                        <li>Soluções de fixação</li>
+                    </ul>
+                    <button onclick="openModal()" class="btn-kit">Montar meu Kit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solucoes-section">
+        <h2 class="section-title">4 linhas de produtos. Um único padrão de qualidade.</h2>
+        <p class="section-subtitle">Soluções voltadas para proteção elétrica, organização técnica e acabamento
+            profissional.</p>
+
+        <div class="grid-solucoes">
+            <div class="card-solucao">
+                <h3>Termotubo Retrátil</h3>
+                <p>Isolamento elétrico com contração precisa 2:1, 3:1, 4:1. Proteção contra sobreaquecimento, umidade e
+                    curto.</p>
+            </div>
+            <div class="card-solucao">
+                <h3>Abraçadeiras</h3>
+                <p>Nylon 6 para interno, Nylon 6.6 UV para externo. Fixação que não resseca, não quebra, não solta.</p>
+            </div>
+            <div class="card-solucao">
+                <h3>Soprador Térmico</h3>
+                <p>Mais precisão e eficiência para aplicações técnicas e profissionais.</p>
+            </div>
+            <div class="card-solucao">
+                <h3>Malha Náutica</h3>
+                <p>Proteção e acabamento premium para chicotes, cabos e aplicações expostas.</p>
+            </div>
+        </div>
+
+        <div class="cta-center">
+            <button onclick="openModal()" class="btn-main">Conhecer soluções</button>
+        </div>
+    </section>
+
+    <section class="porque-section">
+        <h2 class="section-title">Quem exige mais da operação, escolhe melhor os materiais.</h2>
+        <p class="section-subtitle">Empresas dos segmentos elétrico, automação, manutenção, engenharia, sonorização,
+            energia e montagem técnica escolhem a Termotubos.</p>
+
+        <div class="logos-container">
+            <img src="logo-weg.png" alt="WEG" class="logo-img">
+            <img src="cemig.png" alt="Cemig" class="logo-img">
+            <img src="lorenzetti.png" alt="Lorenzetti" class="logo-img">
+            <img src="prysmian.png" alt="Prysmian" class="logo-img">
+            <img src="deltaplus.png" alt="Delta Plus" class="logo-img">
+        </div>
+
+        <div class="carousel-wrapper">
+            <button class="carousel-btn" onmouseenter="startScroll(-1)" onmouseleave="stopScroll()">&#10094;</button>
+            <div class="grid-depoimentos" id="depoimentosCarousel">
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-01.png" alt="Avaliação do Cliente 1" style="max-height: 170px;">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-02.png" alt="Avaliação do Cliente 2">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-03.png" alt="Avaliação do Cliente 3">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-04.png" alt="Avaliação do Cliente 4">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-05.png" alt="Avaliação do Cliente 5">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-06.png" alt="Avaliação do Cliente 6">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-07.png" alt="Avaliação do Cliente 7">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-08.png" alt="Avaliação do Cliente 8">
+                </div>
+            </div>
+            <button class="carousel-btn" onmouseenter="startScroll(1)" onmouseleave="stopScroll()">&#10095;</button>
+        </div>
+
+        <div class="cta-center">
+            <button onclick="openModal()" class="btn-main">Falar com a Termotubos</button>
+        </div>
+    </section>
+
+    <div id="formModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3>Falar com Especialista</h3>
+            <form id="leadForm" onsubmit="submitForm(event)">
+                <div class="form-group"><label>Nome Completo *</label><input type="text" required
+                        placeholder="Digite seu nome"></div>
+                <div class="form-group"><label>Empresa *</label><input type="text" required
+                        placeholder="Nome da empresa"></div>
+                <div class="form-group"><label>Telefone (WhatsApp) *</label><input type="tel" required
+                        placeholder="(00) 00000-0000"></div>
+                <div class="form-group">
+                    <label>Segmento da empresa</label>
+                    <select>
+                        <option>Elétrico</option>
+                        <option>Automação</option>
+                        <option>Sonorização/Eventos</option>
+                        <option>Manutenção</option>
+                        <option>Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Qual solução procura hoje?</label>
+                    <select>
+                        <option>Termotubo Retrátil</option>
+                        <option>Abraçadeiras</option>
+                        <option>Soprador Térmico</option>
+                        <option>Malha Náutica</option>
+                        <option>Kits Completos</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Enviar e Falar no WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('formModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('formModal').style.display = 'none'; }
+        window.onclick = function (event) {
+            let modal = document.getElementById('formModal');
+            if (event.target == modal) { modal.style.display = "none"; }
+        }
+        function submitForm(e) {
+            e.preventDefault();
+            window.location.href = 'https://wa.me/5511999999999';
+        }
+        let scrollInterval;
+        function startScroll(direction) {
+            const carousel = document.getElementById('depoimentosCarousel');
+            const speed = 6;
+
+            function step() {
+                carousel.scrollBy({ left: speed * direction });
+                scrollInterval = requestAnimationFrame(step);
+            }
+            scrollInterval = requestAnimationFrame(step);
+        }
+
+        function stopScroll() {
+            cancelAnimationFrame(scrollInterval);
+            const carousel = document.getElementById('depoimentosCarousel');
+            const cardWidth = carousel.querySelector('.card-depoimento').offsetWidth + 20;
+            const scrollLeft = carousel.scrollLeft;
+            const nearestCardIndex = Math.round(scrollLeft / cardWidth);
+            carousel.scrollTo({ left: nearestCardIndex * cardWidth, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
