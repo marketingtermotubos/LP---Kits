@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termotubos - Soluções B2B</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-escuro: #00397C;
+            --verde-claro: #8CDC3B;
+            --amarelo: #FFC107;
+            --fundo-claro: #F9F9F9;
+            --fundo-base: #F4F7F9;
+            --texto-escuro: #1A1A1A;
+            --branco: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--fundo-base);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background-color: #001f45;
+            color: var(--branco);
+            text-align: center;
+            padding: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background:
+                linear-gradient(135deg, #00285b 0%, var(--azul-escuro) 58%, #004f98 100%);
+            color: var(--branco);
+            padding: 60px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            min-height: 68vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 760px;
+            z-index: 2;
+        }
+
+        .hero-logo {
+            width: 220px;
+            max-width: 60%;
+            height: auto;
+            display: block;
+            margin-top: 0;
+            margin-bottom: 18px;
+            transform: translateY(-68px);
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: #E0E0E0;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: var(--verde-claro);
+            color: #00224A;
+            padding: 18px 45px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            box-shadow: 0 10px 25px rgba(140, 220, 59, 0.3);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            background-color: #7BCA30;
+            box-shadow: 0 15px 30px rgba(140, 220, 59, 0.5);
+        }
+
+        .hero-image-wrapper {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 450px;
+            height: 550px;
+            background:
+                linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02)),
+                #021b3d;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            padding: 34px;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 22px;
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 34px 34px;
+            border-radius: 16px;
+            opacity: 0.45;
+        }
+
+        .hero-product-stage {
+            position: relative;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hero-spec {
+            align-self: flex-start;
+            background: var(--verde-claro);
+            color: #00224A;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .hero-product-board {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-product-card {
+            min-height: 190px;
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 4px 4px 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
+            overflow: hidden;
+        }
+
+        .hero-product-card img {
+            width: 100%;
+            height: 178px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .hero-product-card span {
+            color: var(--azul-escuro);
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .tube-bundle {
+            display: grid;
+            gap: 13px;
+            margin-top: 30px;
+        }
+
+        .tube-bundle span,
+        .cable-run span {
+            display: block;
+            height: 28px;
+            border-radius: 999px;
+            box-shadow: inset 0 -8px 14px rgba(0, 0, 0, 0.25), 0 12px 26px rgba(0, 0, 0, 0.28);
+        }
+
+        .tube-bundle span:nth-child(1) {
+            width: 88%;
+            background: linear-gradient(90deg, #111 0%, #303030 52%, #111 100%);
+        }
+
+        .tube-bundle span:nth-child(2) {
+            width: 72%;
+            background: linear-gradient(90deg, #ffc107 0%, #ffe27a 52%, #d79b00 100%);
+        }
+
+        .tube-bundle span:nth-child(3) {
+            width: 95%;
+            background: linear-gradient(90deg, #8cdc3b 0%, #b5f36d 52%, #5aa61b 100%);
+        }
+
+        .cable-run {
+            position: relative;
+            display: grid;
+            gap: 10px;
+            padding: 26px 24px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 16px;
+        }
+
+        .cable-run::after {
+            content: '';
+            position: absolute;
+            inset: 18px 22px;
+            border: 2px dashed rgba(140, 220, 59, 0.55);
+            border-radius: 14px;
+        }
+
+        .cable-run span:nth-child(1) {
+            background: #141414;
+        }
+
+        .cable-run span:nth-child(2) {
+            background: #f7f7f7;
+        }
+
+        .cable-run span:nth-child(3) {
+            background: #00397c;
+        }
+
+        .visual-caption {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.86rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+
+        /* SEÇÃO DE KITS */
+        .kits-section {
+            padding: 80px 5%;
+            background-color: var(--fundo-base);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--azul-escuro);
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .kits-title {
+            margin-top: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grid-kits {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card-kit {
+            background-color: var(--branco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card-kit:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 57, 124, 0.1);
+        }
+
+        .card-img-box {
+            position: relative;
+            height: auto;
+            width: 420px;
+            min-width: 420px;
+            padding: 16px;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: #E0E0E0;
+        }
+
+        .product-visual {
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 14px;
+            border: 2px solid #e0e8f0;
+        }
+
+        .product-visual::before {
+            content: none;
+        }
+
+        .product-stack,
+        .post-visual-stack {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            display: grid;
+            gap: 12px;
+        }
+
+        .official-photo {
+            background: #FFFFFF;
+        }
+
+        .official-photo img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 210px;
+            object-fit: contain;
+            filter: drop-shadow(0 16px 20px rgba(0, 57, 124, 0.14));
+        }
+
+        .product-photo-cluster {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 310px;
+        }
+
+        .product-photo-cluster img {
+            position: absolute;
+            object-fit: contain;
+            filter: drop-shadow(0 18px 22px rgba(0, 57, 124, 0.16));
+        }
+
+        .product-photo-cluster .main {
+            width: 82%;
+            height: 170px;
+            left: 6%;
+            top: 8px;
+        }
+
+        .product-photo-cluster .main.full {
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+        }
+
+        .product-photo-cluster .main.chicote-size {
+            width: 90%;
+            height: 90%;
+            left: 5%;
+            top: 5%;
+            object-fit: cover;
+        }
+
+        .product-photo-cluster .main.panel-size {
+            width: 110%;
+            height: 110%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .product-photo-cluster .main.panel-size-kit1 {
+            width: 100%;
+            height: 100%;
+        }
+
+        .product-photo-cluster .support {
+            width: 52%;
+            height: 110px;
+            right: 0;
+            bottom: 4px;
+            background: rgba(255, 255, 255, 0.88);
+            border-radius: 14px;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid rgba(0, 57, 124, 0.08);
+            object-fit: cover;
+        }
+
+        .tube {
+            display: block;
+            height: 24px;
+            border-radius: 999px;
+            box-shadow: inset 0 -7px 10px rgba(0, 0, 0, 0.24);
+        }
+
+        .tube.black {
+            background: linear-gradient(90deg, #0b0b0b, #343434, #0b0b0b);
+            width: 92%;
+        }
+
+        .tube.blue {
+            background: linear-gradient(90deg, #00397c, #1f78c9, #00397c);
+            width: 78%;
+        }
+
+        .tube.green {
+            background: linear-gradient(90deg, #65b91f, #b3f26a, #65b91f);
+            width: 86%;
+        }
+
+        .tube.yellow {
+            background: linear-gradient(90deg, #d79b00, #ffe27a, #d79b00);
+            width: 70%;
+        }
+
+        .mesh {
+            width: 94%;
+            height: 42px;
+            border-radius: 999px;
+            background:
+                repeating-linear-gradient(45deg, #00397c 0 5px, transparent 5px 10px),
+                repeating-linear-gradient(-45deg, rgba(0, 57, 124, 0.78) 0 5px, transparent 5px 10px),
+                #dff1ff;
+            border: 2px solid rgba(0, 57, 124, 0.18);
+        }
+
+        .tie-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .tie-row span {
+            width: 12px;
+            height: 82px;
+            border-radius: 7px;
+            background: linear-gradient(180deg, #111 0%, #444 50%, #111 100%);
+            box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+        }
+
+        .heat-gun {
+            width: 168px;
+            height: 82px;
+            border-radius: 28px 14px 14px 28px;
+            background: linear-gradient(135deg, var(--verde-claro), #5fbd20);
+            position: relative;
+            box-shadow: 0 18px 35px rgba(0, 57, 124, 0.18);
+        }
+
+        .heat-gun::before {
+            content: '';
+            position: absolute;
+            right: -62px;
+            top: 22px;
+            border-left: 64px solid #1b1b1b;
+            border-top: 18px solid transparent;
+            border-bottom: 18px solid transparent;
+        }
+
+        .heat-gun::after {
+            content: '';
+            position: absolute;
+            left: 44px;
+            bottom: -70px;
+            width: 42px;
+            height: 78px;
+            border-radius: 0 0 15px 15px;
+            background: #173a5d;
+            transform: skewX(-10deg);
+        }
+
+        .tag {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background-color: var(--amarelo);
+            color: var(--azul-escuro);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            z-index: 5;
+        }
+
+        .tag-desc {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #777;
+            margin-bottom: 0;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .card-body h3+.tag-desc {
+            margin-top: 4px;
+        }
+
+        .btn-kit {
+            display: block;
+            width: 100%;
+            margin-top: auto;
+            padding: 10px;
+            background-color: var(--verde-claro);
+            color: #00224A;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-kit:hover {
+            background-color: #7BCA30;
+            color: #00224A;
+        }
+
+        .card-body {
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        @media (max-width: 900px) {
+            .card-kit {
+                flex-direction: column;
+            }
+
+            .card-img-box {
+                width: 100%;
+                min-width: 100%;
+                height: 220px;
+            }
+
+            .post-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card-body h3 {
+            color: var(--azul-escuro);
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+
+        .title-center {
+            text-align: center;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .feature-list li {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .feature-list li::before {
+            content: '✔';
+            color: var(--verde-claro);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .posts-section {
+            padding: 90px 5%;
+            background: linear-gradient(180deg, #ffffff 0%, #eef5fb 100%);
+        }
+
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 45px auto 0;
+        }
+
+        .post-card {
+            background: var(--branco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 18px 42px rgba(0, 57, 124, 0.09);
+            border: 1px solid rgba(0, 57, 124, 0.08);
+        }
+
+        .post-visual {
+            min-height: 210px;
+            background: linear-gradient(135deg, #00397c 0%, #00224a 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 26px;
+            display: flex;
+            align-items: center;
+        }
+
+        .post-visual::after {
+            content: '';
+            position: absolute;
+            inset: auto 0 0;
+            height: 8px;
+            background: var(--verde-claro);
+        }
+
+        .post-card:nth-child(2) .post-visual {
+            background: linear-gradient(135deg, #f5f9fd 0%, #ffffff 100%);
+        }
+
+        .post-card:nth-child(3) .post-visual {
+            background: linear-gradient(135deg, #10263f 0%, #00397c 100%);
+        }
+
+        .post-card:nth-child(2) .tube {
+            box-shadow: inset 0 -7px 10px rgba(0, 57, 124, 0.2);
+        }
+
+        .post-visual img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 165px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 14px;
+            padding: 12px;
+            filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.18));
+        }
+
+        .post-body {
+            padding: 24px;
+        }
+
+        .post-label {
+            display: inline-block;
+            color: var(--azul-escuro);
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .post-body h3 {
+            color: var(--azul-escuro);
+            font-size: 1.18rem;
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        .post-body p {
+            color: #465260;
+            font-size: 0.92rem;
+        }
+
+        /* SEÇÃO 03 — SOLUÇÕES TERMOTUBOS */
+        .solucoes-section {
+            padding: 90px 5%;
+            background-color: var(--branco);
+        }
+
+        .grid-solucoes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .card-solucao {
+            background-color: var(--fundo-claro);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--azul-escuro);
+        }
+
+        .card-solucao h3 {
+            color: var(--azul-escuro);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .card-solucao p {
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .cta-center {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* SEÇÃO 04 — POR QUE EMPRESAS ESCOLHEM */
+        .porque-section {
+            padding: 90px 5%;
+            background-color: var(--fundo-base);
+        }
+
+        .logos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 40px auto;
+            opacity: 0.6;
+        }
+
+        .logo-placeholder {
+            width: 140px;
+            height: 65px;
+            background: #e0e6ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #777;
+            border-radius: 5px;
+        }
+
+        .logo-img {
+            max-width: 140px;
+            max-height: 65px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: 0.3s;
+        }
+
+        .logo-img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            max-width: 1260px;
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-depoimentos {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding: 15px 0;
+            width: 100%;
+            max-width: 1150px;
+        }
+
+        .grid-depoimentos::-webkit-scrollbar {
+            display: none;
+        }
+
+        .card-depoimento {
+            background-color: var(--branco);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: 0.3s;
+            flex: 0 0 100%;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .card-depoimento {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        .carousel-btn {
+            background-color: var(--verde-claro);
+            color: #00224A;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+            z-index: 10;
+            margin: 0 10px;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn:hover {
+            background-color: #7BCA30;
+            transform: scale(1.1);
+        }
+
+        .card-depoimento:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 50px rgba(0, 57, 124, 0.1);
+        }
+
+        .card-depoimento img {
+            max-width: 100%;
+            max-height: 340px;
+            width: auto;
+            height: auto;
+            display: block;
+        }
+
+        /* MODAL FORM */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: var(--branco);
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .modal-content h3 {
+            color: var(--azul-escuro);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--fundo-claro);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--verde-claro);
+            color: #00224A;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn-submit:hover {
+            background-color: #7BCA30;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 5%;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image-wrapper {
+                justify-content: center;
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .hero-image {
+                height: 400px;
+                padding: 22px;
+            }
+
+            .hero-product-card {
+                min-height: 138px;
+                padding: 12px;
+            }
+
+            .hero-product-card img {
+                height: 96px;
+            }
+
+            .post-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">A maior do segmento | Soluções completas com produtos a pronta entrega e atendimento
+        especializado.</div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <img src="logo-termotubos-branco.png" alt="Termotubos" class="hero-logo">
+            <h1>Proteção elétrica, organização técnica e acabamento profissional para aplicações de alta exigência.</h1>
+            <p>Chicotes organizados, conexões protegidas e padrão replicável em cada aplicação.
+            </p>
+            <button onclick="openModal()" class="btn-main">Montar meu Kit Agora</button>
+        </div>
+        <div class="hero-image-wrapper">
+            <div class="hero-image">
+                <div class="hero-product-stage">
+                    <span class="hero-spec">TERMO RETRÁTIL | MALHA | FIXAÇÃO</span>
+                    <div class="hero-product-board">
+                        <figure class="hero-product-card">
+                            <img src="assets/kit-painel-eletrico.png" alt="Kit 01 Painel Elétrico">
+                        </figure>
+                        <figure class="hero-product-card">
+                            <img src="assets/kit-chicote-automotivo.png" alt="Kit 02 Chicote Automotivo">
+                        </figure>
+                        <figure class="hero-product-card">
+                            <img src="assets/kit-sonorizacao-eventos.png" alt="Kit 03 Sonorização e Eventos">
+                        </figure>
+                        <figure class="hero-product-card">
+                            <img src="assets/kit-manutencao-geral.png" alt="Kit 04 Manutenção Geral">
+                        </figure>
+                    </div>
+                    <span class="visual-caption">Kit técnico montado por aplicação</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="kits-section">
+        <h2 class="section-title kits-title">O que você vai encontrar nos nossos Kits?</h2>
+        <p class="section-subtitle">Kits desenvolvidos sob medida para atender as demandas técnicas da sua equipe.</p>
+        <div class="grid-kits">
+            <div class="card-kit">
+                <div class="card-img-box">
+                    <div class="product-visual official-photo">
+                        <div class="product-photo-cluster">
+                            <img class="main panel-size" src="assets/kit-painel-eletrico.png" alt="Kit Painel Elétrico" style="transform: translate(-50%, -50%) scale(1.12);">
+                        </div>
+                        <span class="tag">KIT 01</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="title-center">Painel Elétrico Profissional</h3>
+                    <span class="tag-desc">Cabos organizados, painéis padronizados e menor risco operacional para quem vive de quadro elétrico.</span>
+                    <ul class="feature-list">
+                        <li>Termotubo retrátil</li>
+                        <li>Abraçadeiras de nylon</li>
+                        <li>Fita isolante FIC/FIA</li>
+                        <li>Malha Náutica Expansível</li>
+                        <li>Soprador térmico</li>
+                    </ul>
+                    <button onclick="openModal()" class="btn-kit">Montar meu Kit</button>
+                </div>
+            </div>
+            <div class="card-kit">
+                <div class="card-img-box">
+                    <div class="product-visual official-photo">
+                        <div class="product-photo-cluster">
+                            <img class="main panel-size" src="assets/kit-chicote-automotivo.png" alt="Kit Chicote Automotivo" style="transform: translate(-50%, -50%) scale(1.12);">
+                        </div>
+                        <span class="tag">KIT 02</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="title-center">Chicote Automotivo</h3>
+                    <span class="tag-desc">Proteção, organização e acabamento técnico para aplicações que exigem padrão e confiabilidade.</span>
+                    <ul class="feature-list">
+                        <li>Malha náutica expansível</li>
+                        <li>Termotubo retrátil</li>
+                        <li>Abraçadeiras de nylon</li>
+                        <li>Fita Isolante FIC/FIA</li>
+                    </ul>
+                    <button onclick="openModal()" class="btn-kit">Montar meu Kit</button>
+                </div>
+            </div>
+            <div class="card-kit">
+                <div class="card-img-box">
+                    <div class="product-visual official-photo">
+                        <div class="product-photo-cluster">
+                            <img class="main panel-size" src="assets/kit-sonorizacao-eventos.png" alt="Kit Sonorização e Eventos" style="transform: translate(-50%, -50%) scale(1.12);">
+                        </div>
+                        <span class="tag">KIT 03</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="title-center">Sonorização e Eventos</h3>
+                    <span class="tag-desc">O único kit desenvolvido para resistir a condições extremas.</span>
+                    <ul class="feature-list">
+                        <li>Malha náutica expansível</li>
+                        <li>Abraçadeiras de nylon</li>
+                        <li>Termotubo retrátil</li>
+                    </ul>
+                    <button onclick="openModal()" class="btn-kit">Montar meu Kit</button>
+                </div>
+            </div>
+            <div class="card-kit">
+                <div class="card-img-box">
+                    <div class="product-visual official-photo">
+                        <div class="product-photo-cluster">
+                            <img class="main panel-size" src="assets/kit-manutencao-geral.png" alt="Kit Manutenção Geral" style="transform: translate(-50%, -50%) scale(1.12);">
+                        </div>
+                        <span class="tag">KIT 04</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="title-center">Manutenção Geral</h3>
+                    <span class="tag-desc">Rapidez na execução, acabamento profissional e menos retrabalho.</span>
+                    <ul class="feature-list">
+                        <li>Termotubo retrátil</li>
+                        <li>Abraçadeiras de nylon</li>
+                        <li>Fita isolante FIA</li>
+                        <li>Soprador térmico</li>
+                    </ul>
+                    <button onclick="openModal()" class="btn-kit">Montar meu Kit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solucoes-section">
+        <h2 class="section-title">4 linhas de produtos.<br>Um único padrão de qualidade.</h2>
+        <p class="section-subtitle">Soluções voltadas para proteção elétrica, organização técnica e acabamento
+            profissional.</p>
+
+        <div class="grid-solucoes">
+            <div class="card-solucao">
+                <h3>Termotubo Retrátil</h3>
+                <p>Isolamento elétrico com contração precisa 2:1, 3:1, 4:1. Proteção contra sobreaquecimento, umidade e
+                    curto.</p>
+            </div>
+            <div class="card-solucao">
+                <h3>Abraçadeiras</h3>
+                <p>Nylon 6 para interno, Nylon 6.6 UV para externo. Fixação que não resseca, não quebra, não solta.</p>
+            </div>
+            <div class="card-solucao">
+                <h3>Soprador Térmico</h3>
+                <p>Mais precisão e eficiência para aplicações técnicas e profissionais.</p>
+            </div>
+            <div class="card-solucao">
+                <h3>Malha Náutica</h3>
+                <p>Proteção e acabamento premium para chicotes, cabos e aplicações expostas.</p>
+            </div>
+        </div>
+
+        <div class="cta-center">
+            <button onclick="openModal()" class="btn-main">Conhecer soluções</button>
+        </div>
+    </section>
+
+    <section class="porque-section">
+        <h2 class="section-title">Quem exige mais da operação, escolhe melhor os materiais.</h2>
+        <p class="section-subtitle">Empresas dos segmentos elétrico, automação, manutenção, engenharia, sonorização,
+            energia e montagem técnica escolhem a Termotubos.</p>
+
+        <div class="logos-container">
+            <img src="logo-weg.png" alt="WEG" class="logo-img">
+            <img src="cemig.png" alt="Cemig" class="logo-img">
+            <img src="lorenzetti.png" alt="Lorenzetti" class="logo-img">
+            <img src="prysmian.png" alt="Prysmian" class="logo-img">
+            <img src="deltaplus.png" alt="Delta Plus" class="logo-img">
+        </div>
+
+        <div class="carousel-wrapper">
+            <button class="carousel-btn" onmouseenter="startScroll(-1)" onmouseleave="stopScroll()"
+                onclick="jumpToComment(-1)">&#10094;</button>
+            <div class="grid-depoimentos" id="depoimentosCarousel">
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-01.png" alt="Avaliação do Cliente 1" style="max-height: 170px;">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-02.png" alt="Avaliação do Cliente 2">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-03.png" alt="Avaliação do Cliente 3">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-04.png" alt="Avaliação do Cliente 4">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-05.png" alt="Avaliação do Cliente 5">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-06.png" alt="Avaliação do Cliente 6">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-07.png" alt="Avaliação do Cliente 7">
+                </div>
+                <div class="card-depoimento">
+                    <img src="avaliacao-cliente-08.png" alt="Avaliação do Cliente 8">
+                </div>
+            </div>
+            <button class="carousel-btn" onmouseenter="startScroll(1)" onmouseleave="stopScroll()"
+                onclick="jumpToComment(1)">&#10095;</button>
+        </div>
+
+        <div class="cta-center">
+            <button onclick="openModal()" class="btn-main">Falar com a Termotubos</button>
+        </div>
+    </section>
+
+    <div id="formModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3>Falar com Especialista</h3>
+            <form id="leadForm" onsubmit="submitForm(event)">
+                <div class="form-group"><label>Nome Completo *</label><input type="text" required
+                        placeholder="Digite seu nome"></div>
+                <div class="form-group"><label>Empresa *</label><input type="text" required
+                        placeholder="Nome da empresa"></div>
+                <div class="form-group"><label>Telefone (WhatsApp) *</label><input type="tel" required
+                        placeholder="(00) 00000-0000"></div>
+                <div class="form-group">
+                    <label>Segmento da empresa</label>
+                    <select>
+                        <option>Elétrico</option>
+                        <option>Automação</option>
+                        <option>Sonorização/Eventos</option>
+                        <option>Manutenção</option>
+                        <option>Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Qual solução procura hoje?</label>
+                    <select>
+                        <option>Termotubo Retrátil</option>
+                        <option>Abraçadeiras</option>
+                        <option>Soprador Térmico</option>
+                        <option>Malha Náutica</option>
+                        <option>Kits Completos</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Enviar e Falar no WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('formModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('formModal').style.display = 'none'; }
+        window.onclick = function (event) {
+            let modal = document.getElementById('formModal');
+            if (event.target == modal) { modal.style.display = "none"; }
+        }
+        function submitForm(e) {
+            e.preventDefault();
+            window.location.href = 'https://wa.me/5511999999999';
+        }
+        let scrollInterval;
+        function startScroll(direction) {
+            const carousel = document.getElementById('depoimentosCarousel');
+            const speed = 6;
+
+            function step() {
+                carousel.scrollBy({ left: speed * direction });
+                scrollInterval = requestAnimationFrame(step);
+            }
+            scrollInterval = requestAnimationFrame(step);
+        }
+
+        function stopScroll() {
+            cancelAnimationFrame(scrollInterval);
+            const carousel = document.getElementById('depoimentosCarousel');
+            const cardWidth = carousel.querySelector('.card-depoimento').offsetWidth + 20;
+            const scrollLeft = carousel.scrollLeft;
+            const nearestCardIndex = Math.round(scrollLeft / cardWidth);
+            carousel.scrollTo({ left: nearestCardIndex * cardWidth, behavior: 'smooth' });
+        }
+
+        function jumpToComment(direction) {
+            cancelAnimationFrame(scrollInterval);
+            const carousel = document.getElementById('depoimentosCarousel');
+            const cards = carousel.querySelectorAll('.card-depoimento');
+            const cardWidth = carousel.querySelector('.card-depoimento').offsetWidth + 20;
+            const currentIndex = Math.round(carousel.scrollLeft / cardWidth);
+            const targetIndex = Math.max(0, Math.min(cards.length - 1, currentIndex + direction));
+            carousel.scrollTo({ left: targetIndex * cardWidth, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
