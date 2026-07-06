@@ -64,7 +64,7 @@
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(90deg, rgba(0, 23, 57, 0.7) 0%, rgba(0, 34, 79, 0.52) 26%, rgba(0, 57, 124, 0.18) 52%, rgba(0, 57, 124, 0.04) 100%),
+                linear-gradient(90deg, rgba(0, 57, 124, 0.82) 0%, rgba(0, 57, 124, 0.6) 26%, rgba(0, 57, 124, 0.18) 52%, rgba(0, 57, 124, 0.04) 100%),
                 radial-gradient(circle at left bottom, rgba(255, 255, 255, 0.06) 0%, transparent 38%);
             pointer-events: none;
             z-index: 1;
@@ -879,6 +879,140 @@
             margin-top: 40px;
         }
 
+        .benefits-bar {
+            background-color: var(--azul-escuro);
+            padding: 22px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 25px 40px;
+        }
+
+        .benefits-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px 35px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .benefit-icon {
+            font-size: 1.1rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #25D366;
+            color: #fff;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .site-footer {
+            background-color: var(--azul-escuro);
+            color: #fff;
+            padding: 40px 20px 25px;
+            text-align: center;
+        }
+
+        .footer-contatos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 90px;
+            margin-bottom: 30px;
+        }
+
+        .footer-item {
+            max-width: 260px;
+        }
+
+        .footer-icon {
+            display: block;
+            font-size: 1.6rem;
+            color: var(--verde-claro);
+            margin-bottom: 8px;
+        }
+
+        .footer-item p {
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #e6ecf5;
+        }
+
+        .footer-divider {
+            max-width: 1100px;
+            margin: 0 auto 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-empresa {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .footer-cnpj {
+            font-size: 0.85rem;
+            color: #a9bcd6;
+        }
+
+        .google-reviews-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 60px;
+            margin-bottom: 10px;
+        }
+
+        .google-logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Product Sans', Arial, sans-serif;
+        }
+
+        .google-reviews-word {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #5f6368;
+        }
+
+        .google-reviews-stars {
+            color: #FBBC05;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+        }
+
+        .cta-subtitle {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--azul-escuro);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .btn-especialista {
+            padding: 14px 32px;
+            font-size: 0.95rem;
+            margin-top: 25px;
+        }
+
         /* SEÇÃO 04 — POR QUE EMPRESAS ESCOLHEM */
         .porque-section {
             padding: 90px 5%;
@@ -1160,6 +1294,30 @@
         <span class="hero-caption-overlay">Kit técnico montado por aplicação</span>
     </header>
 
+    <section class="benefits-bar">
+        <div class="benefits-list">
+            <div class="benefit-item">
+                <span class="benefit-icon">&#9889;</span>
+                <span>Pronta entrega</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">&#128666;</span>
+                <span>Envio para todo Brasil</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">&#128295;</span>
+                <span>Atendimento técnico</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">&#127974;</span>
+                <span>Condição especial para empresas</span>
+            </div>
+        </div>
+        <a href="https://wa.me/5547996974344" target="_blank" rel="noopener" class="btn-whatsapp">
+            Comprar agora pelo WhatsApp
+        </a>
+    </section>
+
     <section class="kits-section">
         <h2 class="section-title kits-title">O que você vai encontrar nos nossos Kits?</h2>
         <p class="section-subtitle">Kits desenvolvidos sob medida para atender as demandas técnicas da sua equipe.</p>
@@ -1168,7 +1326,7 @@
                 <div class="card-img-box">
                     <div class="product-visual official-photo">
                         <div class="product-photo-cluster">
-                            <img src="assets/kits/Painel Elétrico.png" alt="Kit Painel Elétrico Profissional" class="main full kit-1-lower">
+                            <img src="assets/kits/Kit - Painel Elétrico.png" alt="Kit Painel Elétrico Profissional" class="main full kit-1-lower">
                         </div>
                     </div>
                 </div>
@@ -1190,7 +1348,7 @@
                 <div class="card-img-box">
                     <div class="product-visual official-photo">
                         <div class="product-photo-cluster">
-                            <img src="assets/kits/Chicote Automotivo.png" alt="Kit Chicote Automotivo" class="main full">
+                            <img src="assets/kits/Kit - Chicote Automotivo.png" alt="Kit Chicote Automotivo" class="main full">
                         </div>
                     </div>
                 </div>
@@ -1211,7 +1369,7 @@
                 <div class="card-img-box">
                     <div class="product-visual official-photo">
                         <div class="product-photo-cluster">
-                            <img src="assets/kits/Sonorização.png" alt="Kit Sonorização e Eventos" class="main full kit-3-lower">
+                            <img src="assets/kits/Kit - Sonorização.png" alt="Kit Sonorização e Eventos" class="main full kit-3-lower">
                         </div>
                     </div>
                 </div>
@@ -1231,7 +1389,7 @@
                 <div class="card-img-box">
                     <div class="product-visual official-photo">
                         <div class="product-photo-cluster">
-                            <img src="assets/kits/Manutenção Geral.png" alt="Kit Manutenção Geral" class="main full maintenance-lower">
+                            <img src="assets/kits/Kit - Manutenção Geral.png" alt="Kit Manutenção Geral" class="main full maintenance-lower">
                         </div>
                     </div>
                 </div>
@@ -1283,6 +1441,13 @@
 
     <section class="porque-section">
         <h2 class="section-title">Quem exige mais da operação, escolhe melhor os materiais.</h2>
+        <div class="google-reviews-badge">
+            <span class="google-logo-text">
+                <span style="color:#4285F4;">G</span><span style="color:#EA4335;">o</span><span style="color:#FBBC05;">o</span><span style="color:#4285F4;">g</span><span style="color:#34A853;">l</span><span style="color:#EA4335;">e</span>
+            </span>
+            <span class="google-reviews-word">Reviews</span>
+            <span class="google-reviews-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
         <div class="carousel-wrapper">
             <button class="carousel-btn" onmouseenter="startScroll(-1)" onmouseleave="stopScroll()"
                 onclick="jumpToComment(-1)">&#10094;</button>
@@ -1317,9 +1482,32 @@
         </div>
 
         <div class="cta-center">
-            <button onclick="openModal()" class="btn-main">Falar com a Termotubos</button>
+            <p class="cta-subtitle">Não encontrou exatamente o kit que precisa?<br>Montamos um kit personalizado para sua empresa.</p>
+            <button onclick="openModal()" class="btn-main btn-especialista">Fale agora com um especialista</button>
         </div>
     </section>
+
+    <footer class="site-footer">
+        <div class="footer-contatos">
+            <div class="footer-item">
+                <span class="footer-icon">&#128205;</span>
+                <p>Av. Vereador Abrahão João Francisco, 3555<br>Carvalho - Itajaí SC</p>
+            </div>
+            <div class="footer-item">
+                <span class="footer-icon">&#128222;</span>
+                <p>(47) 99697-4344</p>
+            </div>
+            <div class="footer-item">
+                <span class="footer-icon">&#9993;</span>
+                <p>vendas@termotubos.com.br</p>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-legal">
+            <p class="footer-empresa">Termotubos Importação e Exportação LTDA</p>
+            <p class="footer-cnpj">CNPJ: 23.479.154/0001-03. &copy; 2026. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <div id="formModal" class="modal-overlay">
         <div class="modal-content">
@@ -1401,4 +1589,3 @@
 </body>
 
 </html>
-
