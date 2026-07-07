@@ -678,12 +678,26 @@
         @media (max-width: 900px) {
             .card-kit {
                 flex-direction: column;
+                height: auto;
+                min-height: auto;
             }
 
             .card-img-box {
+                position: relative;
                 width: 100%;
                 min-width: 100%;
                 height: 220px;
+            }
+
+            .card-body {
+                position: relative;
+                top: auto;
+                right: auto;
+                bottom: auto;
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                margin-top: -30px;
             }
 
             .post-grid {
@@ -1333,9 +1347,6 @@
                 <span>Condição especial para empresas</span>
             </div>
         </div>
-        <a href="https://wa.me/5547996974344" target="_blank" rel="noopener" class="btn-whatsapp">
-            Comprar agora pelo WhatsApp
-        </a>
     </section>
 
     <section class="kits-section">
