@@ -1269,6 +1269,22 @@
         }
 
         @media (max-width: 900px) {
+            .benefits-bar {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .benefits-bar::-webkit-scrollbar {
+                display: none;
+            }
+
+            .benefits-list {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+
             .hero {
                 flex-direction: column;
                 text-align: center;
